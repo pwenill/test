@@ -1,0 +1,16 @@
+{
+  "name": "swarmtest",
+  "version": "1.0.0",
+  "description": "Docker swarm test in Node.js",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "Norbert Csanadi <csana@csana.hu>",
+  "license": "(GPL-1.0-or-later)",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
