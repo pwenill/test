@@ -1,19 +1,21 @@
 version: "3"
 
 services:
-  nextjs-app:
+  next-app:
+    container_name: next-app
     build:
       context: .
       dockerfile: Dockerfile
+    restart: always
     ports:
-      - "3000:3000"
-    deploy:
-      replicas: 2
-      restart_policy:
-        condition: on-failure
+      - 3000:3000
     networks:
-      - app-network
+      - my_network
 
+  # Add more containers below (nginx, postgres, etc.)
+
+# Define a network, which allows containers to communicate
+# with each other, by using their container name as a hostname
 networks:
-  app-network:
-    driver: overlay
+  my_network:
+    external: true
