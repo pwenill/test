@@ -1,9 +1,18 @@
-version: "3"
+version: '3.8'
 
 services:
-  next-app:
-    build:
-      context: .
-      dockerfile: Dockerfile
+  nextjs-app:
+    image: nextjs-app:latest
+    build: .
     ports:
-      - 3000:3000
+      - "3000:3000"
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: on-failure
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: overlay
