@@ -11,3 +11,9 @@ services:
       replicas: 2
       restart_policy:
         condition: on-failure
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: overlay
