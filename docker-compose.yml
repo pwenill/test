@@ -5,3 +5,4 @@ services:
     image: node
     ports:
       - 1546:1546
+    restart: always
