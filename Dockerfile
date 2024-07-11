@@ -1,20 +1,20 @@
-# Use the official Node.js image as the base image
-FROM node:20.5.1
+# Utiliser l'image officielle de Node.js comme image de base
+FROM node:latest
 
-# Set the working directory inside the container
+# Créer un répertoire de travail
 WORKDIR /app
 
-# Copy package.json and package-lock.json to the working directory
-COPY package*.json .
+# Copier les fichiers package.json et package-lock.json
+COPY package*.json ./
 
-# Install dependencies
+# Installer les dépendances de l'application
 RUN npm install
 
-# Copy the rest of the application code to the working directory
+# Copier le reste des fichiers de l'application
 COPY . .
 
-# Expose the port that the server will be listening on
+# Exposer le port sur lequel l'application tourne
 EXPOSE 1546
 
-# Start the server
-CMD ["node", "server.js"]
+# Commande pour démarrer l'application
+CMD ["npm", "start"]
