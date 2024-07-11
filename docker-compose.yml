@@ -5,8 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    volumes:
-      - staticbuild:/app/out
+    image: registry/nextjs-app:latest
     ports:
       - "3000:3000"
     deploy:
@@ -19,6 +18,3 @@ services:
 networks:
   app-network:
     driver: overlay
-
-volumes:
-    staticbuild:
