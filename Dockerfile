@@ -1,5 +1,5 @@
 # Use the official Node.js image as the base image
-FROM node:14
+FROM node:22-alpine
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 1546
 
 # Start the server
-CMD ["npm", "start"]
+CMD ["node", "server.js"]
