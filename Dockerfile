@@ -1,25 +1,20 @@
-# Dockerfile
+# Use the official Node.js image as the base image
+FROM node:14
 
-# Utiliser une image de base Node.js
-FROM node:16-alpine
-
-# Définir le répertoire de travail
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copier package.json et package-lock.json
+# Copy package.json and package-lock.json to the working directory
 COPY package*.json ./
 
-# Installer les dépendances
+# Install dependencies
 RUN npm install
 
-# Copier le reste des fichiers de l'application
+# Copy the rest of the application code to the working directory
 COPY . .
 
-# Construire l'application Next.js
-RUN npm run build
+# Expose the port that the server will be listening on
+EXPOSE 8000
 
-# Exposer le port
-EXPOSE 3000
-
-# Démarrer l'application
+# Start the server
 CMD ["npm", "start"]
