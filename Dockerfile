@@ -1,5 +1,7 @@
 # Use the official Node.js image as the base image
-FROM node:22-alpine
+FROM alpine:3.19
+
+ENV NODE_VERSION 22.4.1
 
 # Set the working directory inside the container
 WORKDIR /app
