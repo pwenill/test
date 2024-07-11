@@ -5,7 +5,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: nextjs-app:latest
+    volumes:
+      - staticbuild:/app/out
     ports:
       - "3000:3000"
     deploy:
