@@ -15,4 +15,4 @@ ENV PORT 4000
 EXPOSE 4000
 
 # Commande pour démarrer l'application
-CMD ["npm", "start"]
+CMD ["node", "server.js"]
