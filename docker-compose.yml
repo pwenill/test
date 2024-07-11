@@ -9,3 +9,9 @@ services:
         condition: any
     ports:
       - 1546:1546
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: overlay
