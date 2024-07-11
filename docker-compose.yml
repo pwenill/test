@@ -3,8 +3,9 @@ version: "3"
 services:
   node:
     image: node:latest
-    build:
-      context: .
-      dockerfile: Dockerfile
+    build: .
     ports:
       - "1546:1546"
+    environment:
+      NODE_ENV: development
+    command: ["npm", "start"]
